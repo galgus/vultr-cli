@@ -30,10 +30,10 @@ func ServerIPV6(ip []govultr.IPV6) {
 }
 
 func ServerList(server []govultr.Server) {
-	col := columns{"ID", "IP", "LABEL", "OS", "STATUS", "Region", "CPU", "RAM", "DISK", "BANDWIDTH", "COST"}
+	col := columns{"ID", "IP", "LABEL", "TAG", "OS", "STATUS", "Region", "CPU", "RAM", "DISK", "BANDWIDTH", "COST"}
 	display(col)
 	for _, s := range server {
-		display(columns{s.InstanceID, s.MainIP, s.Label, s.Os, s.Status, s.RegionID, s.VPSCpus, s.RAM, s.Disk, s.CurrentBandwidth, s.Cost})
+		display(columns{s.InstanceID, s.MainIP, s.Label, s.Tag, s.Os, s.Status, s.RegionID, s.VPSCpus, s.RAM, s.Disk, s.CurrentBandwidth, s.Cost})
 	}
 	flush()
 }
